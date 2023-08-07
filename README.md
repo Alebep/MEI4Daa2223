@@ -29,17 +29,24 @@ a comparação com modelos alternativos e a seleção do melhor modelo;
 
 # Resultados e Discussão
 
-Os resultados obtidos demonstraram o sucesso da abordagem proposta na previsão do nível de incidentes rodoviários em uma determinada hora. A análise comparativa dos modelos revelou que determinadas técnicas se destacaram em termos de precisão e capacidade de generalização. 
+Na tabela abaixo, temos a lista de algortimos testados:
 
 ## Tabela de Resultados
 
 | Algoritmo          | Hiperparâmetros                   | Acurácia     |
 |--------------------|-----------------------------------|--------------|
-| Regressão Linear   | Alpha: 0.01                       | 0.82         |
-| Árvore de Decisão  | Profundidade Máx.: 10             | 0.75         |
-| Random Forest      | Estimadores: 100, Profund.: 20    | 0.88         |
-| SVM                | Kernel: RBF, C: 1.0               | 0.79         |
-| Rede Neural        | Camadas: [64, 32, 16], Épocas: 50 | 0.90         |
+| LogisticRegression | ’fit intercept’: True, ’max iter’: 10,
+’penalty’: ’l2’, ’tol’: 0.0001                    | 0.82         |
+|  DecisionTreeClassifier | ’max depth’: 1000, ’max features’: ’log2’,
+’min samples leaf ’: 1, ’min samples split’: 2            | 0.75         |
+| Random Forest      | ’criterion’: ’entropy’,’max depth’: None,
+’max features’: 1.0, ’n estimators’: 100    | 0.88         |
+| KNeighborsClassifier                | ’algorithm’: ’brute’, ’n neighbors’: 20,
+’p’: 1, ’weights’: ’distance’               | 0.79         |
+| BaggingClassifier      | ’max features’: 1.0, ’max samples’: 0.5,
+’n estimators’: 100, ’random state’: None | 0.90         |
+
+Como podemos observar na tabela, obtivemos os melhores resultados com o algoritmo RandomForest. Esse foi o algoritmo que utilizamos para fazer a submissão com os melhores resultados no kaggle. Os resultados obtidos com o RandomForest durante os testes, foram similares aos obtidos no kaggle, o que demonstra que o nosso modelo conseguiu fazer uma boa generalização dos dados. Os testes foram realizados, usando o dataset de treino, e obtivemos 0.94 de acurácia. O resultado obtido no kaggle foi de 0.95857 de acurácia. Na figura 6 podemos observar a leaderboard com o resultado final da competição no kaggle.
 
 ## Uso do Código
 
