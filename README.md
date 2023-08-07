@@ -1,4 +1,4 @@
-# competição ML @SBS/DAA - 5ª Edição (2022/2023)
+# Competição ML @SBS/DAA - 5ª Edição (2022/2023)
 
 ## Introdução
 
